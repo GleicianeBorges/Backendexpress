@@ -2,7 +2,8 @@ import { cars } from "../db/db.js";
 import CarsRepository from "../repositories/carsRepository.js";
 
 const CarsController = {
-    getCars: (req, res) => {
+    getCars: async(req, res) => {
+        const cars =await CarsRepository.getCars();
         res.json(cars);
     },
     newCar: (req, res) => {
